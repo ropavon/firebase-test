@@ -10,8 +10,7 @@ export const environment = {
     projectId: 'testconnection-52d1f',
     storageBucket: 'testconnection-52d1f.appspot.com',
     messagingSenderId: '562748345721',
-    appId: '1:562748345721:web:a1b228222c051661df73a8',
-    measurementId: 'from firebase config'
+    appId: '1:562748345721:web:a1b228222c051661df73a8'
   }
 };
 

@@ -1,33 +1,33 @@
 import { Injectable } from '@angular/core';
 import { AngularFireMessaging } from '@angular/fire/messaging';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs'
+ 
 @Injectable()
 export class MessagingService {
-  currentMessage = new BehaviorSubject(null);
-  constructor(private angularFireMessaging: AngularFireMessaging) {
-    angularFireMessaging.messages.subscribe(
-      (message) => { console.log(message); });
-      /**
-       (_messaging) => {
-      _messaging.onMessage = _messaging.onMessage.bind(_messaging);
-      _messaging.onTokenRefresh = _messaging.onTokenRefresh.bind(_messaging);
-      /**/
-    //});
+ 
+currentMessage = new BehaviorSubject(null);
+ 
+constructor(private angularFireMessaging: AngularFireMessaging) {
+ 
+     this.angularFireMessaging.messaging.subscribe(
+     (msgings) => {
+   msgings.onMessage = msgings.onMessage.bind(msgings);
+   msgings.onTokenRefresh=msgings.onTokenRefresh.bind(msgings);
+    })
   }
+ 
   requestPermission() {
     this.angularFireMessaging.requestToken.subscribe(
-      (token) => {
-        console.log(token);
-      },
-      (err) => {
-        console.error('Unable to get permission to notify.', err);
-      }
-    );
-  }
-  receiveMessage() {
-    this.angularFireMessaging.messages.subscribe((payload) => {
-      console.log('new message received. ', payload);
-      this.currentMessage.next(payload);
+    (token) => {
+    console.log(token);
     });
   }
+ 
+  receiveMessage() {
+    this.angularFireMessaging.messages.subscribe(
+    (msg) => {
+    console.log("show message!", msg);
+    this.currentMessage.next(msg);
+       })
+    }
 }

@@ -4,14 +4,15 @@ importScripts('https://www.gstatic.com/firebasejs/7.6.0/firebase-messaging.js');
 
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyB7iE2KN8llxkUQ4NJ_MU2tj2x3DyvDSK8",
-    authDomain: "testconexion-ea30e.firebaseapp.com",
-    databaseURL: "https://testconexion-ea30e.firebaseio.com",
-    projectId: "testconexion-ea30e",
-    storageBucket: "testconexion-ea30e.appspot.com",
-    messagingSenderId: "144077078483",
-    appId: "1:144077078483:web:6d68273927dfbb11013926",
-    measurementId: "from firebase config"
+
+    apiKey: 'AIzaSyAsISNnEisCCtkIvCagZrI0GGr3lYRuAvc',
+    authDomain: 'testconnection-52d1f.firebaseapp.com',
+    databaseURL: 'https://testconnection-52d1f.firebaseio.com',
+    projectId: 'testconnection-52d1f',
+    storageBucket: 'testconnection-52d1f.appspot.com',
+    messagingSenderId: '562748345721',
+    appId: '1:562748345721:web:a1b228222c051661df73a8',
+    measurementId: 'from firebase config'
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);

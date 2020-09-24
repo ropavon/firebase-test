@@ -5,10 +5,14 @@ import { BehaviorSubject } from 'rxjs';
 export class MessagingService {
   currentMessage = new BehaviorSubject(null);
   constructor(private angularFireMessaging: AngularFireMessaging) {
-    angularFireMessaging.messaging.subscribe((_messaging) => {
+    angularFireMessaging.messages.subscribe(
+      (message) => { console.log(message); });
+      /**
+       (_messaging) => {
       _messaging.onMessage = _messaging.onMessage.bind(_messaging);
       _messaging.onTokenRefresh = _messaging.onTokenRefresh.bind(_messaging);
-    });
+      /**/
+    //});
   }
   requestPermission() {
     this.angularFireMessaging.requestToken.subscribe(
